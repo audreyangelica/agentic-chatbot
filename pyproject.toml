@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentic-meeting-preprocessor"
+version = "0.1.0"
+description = "Meeting transcript conversion pipeline and MCP server"
+requires-python = ">=3.10"
+dependencies = [
+  "mcp>=1.28,<2",
+  "pypdf>=6.14,<7",
+]
+
+[project.scripts]
+convert-ami = "meeting_preprocessor.cli:main"
+transcript-converter-mcp = "meeting_preprocessor.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
